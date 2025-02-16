@@ -1,11 +1,9 @@
 "use client";
 
-import { useAccount } from "wagmi";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Dashboard() {
-  const { address } = useAccount();
-
   // Temporary mock data for posts
   const posts = [
     {
@@ -35,11 +33,15 @@ export default function Dashboard() {
           className="bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-white/10"
         >
           {/* Post Image */}
-          <img
-            src={post.imageUrl}
-            alt={`Post ${post.id}`}
-            className="w-full aspect-square object-cover"
-          />
+          <div className="relative aspect-square">
+            <Image
+              src={post.imageUrl}
+              alt={`Post ${post.id}`}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 600px"
+            />
+          </div>
 
           {/* Post Content */}
           <div className="p-4">

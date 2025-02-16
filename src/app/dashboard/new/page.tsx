@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { FaImage, FaTimes } from "react-icons/fa";
+import Image from "next/image";
 
 export default function NewPost() {
   const router = useRouter();
@@ -26,6 +27,9 @@ export default function NewPost() {
   };
 
   const handleRemoveImage = () => {
+    if (previewUrl) {
+      URL.revokeObjectURL(previewUrl);
+    }
     setSelectedImage(null);
     setPreviewUrl(null);
     if (fileInputRef.current) {
@@ -74,11 +78,13 @@ export default function NewPost() {
               <p className="text-white/40 text-sm mt-1">JPG, PNG, GIF</p>
             </div>
           ) : (
-            <div className="relative">
-              <img
+            <div className="relative aspect-square">
+              <Image
                 src={previewUrl}
                 alt="Preview"
-                className="w-full aspect-square object-cover rounded-xl"
+                fill
+                className="rounded-xl object-cover"
+                sizes="(max-width: 768px) 100vw, 600px"
               />
               <button
                 type="button"

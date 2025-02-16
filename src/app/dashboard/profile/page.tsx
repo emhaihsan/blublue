@@ -2,6 +2,7 @@
 
 import { useAccount } from "wagmi";
 import { FaEthereum } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Profile() {
   const { address } = useAccount();
@@ -80,10 +81,12 @@ export default function Profile() {
       <div className="grid grid-cols-3 gap-2">
         {userPosts.map((post) => (
           <div key={post.id} className="aspect-square relative rounded-lg overflow-hidden">
-            <img
+            <Image
               src={post.imageUrl}
               alt={`Post ${post.id}`}
+              fill
               className="w-full h-full object-cover"
+              sizes="100px"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
               <div className="text-white text-sm font-medium">
