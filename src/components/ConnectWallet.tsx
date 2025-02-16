@@ -1,42 +1,26 @@
 "use client";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { useAccount } from "wagmi";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useWalletStatus } from "@/hooks/useWalletStatus";
 
 export function ConnectWallet() {
-  const { isConnected } = useAccount();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (isConnected) {
-      router.push("/dashboard");
-    }
-  }, [isConnected, router]);
+  // This hook will handle the routing based on wallet connection
+  const { isConnected } = useWalletStatus();
 
   return (
     <ConnectButton.Custom>
-      {({
-        account,
-        chain,
-        openAccountModal,
-        openChainModal,
-        openConnectModal,
-        mounted,
-      }) => {
-        const ready = mounted;
-        if (!ready) {
-          return null;
+      {({ openConnectModal }) => {
+        if (!isConnected) {
+          return (
+            <button
+              onClick={openConnectModal}
+              className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all transform hover:scale-105"
+            >
+              Connect Wallet
+            </button>
+          );
         }
 
-        return (
-          <button
-            onClick={openConnectModal}
-            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all transform hover:scale-105"
-          >
-            Connect Wallet
-          </button>
-        );
+        return null;
       }}
     </ConnectButton.Custom>
   );

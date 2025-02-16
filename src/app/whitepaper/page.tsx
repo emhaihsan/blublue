@@ -39,7 +39,7 @@ export default function Whitepaper() {
           <section className="space-y-4">
             <h2 className="text-3xl font-bold text-blue-400">1. Introduction</h2>
             <p>
-              In the current social media landscape, user engagement and content creation generate immense value for platforms, while creators often struggle to monetize their contributions effectively. Blublue addresses this imbalance by introducing a revolutionary "Like-to-Value" system, where engagement is directly converted into tangible rewards.
+              In the current social media landscape, user engagement and content creation generate immense value for platforms, while creators often struggle to monetize their contributions effectively. Blublue addresses this imbalance by introducing a revolutionary &ldquo;Like-to-Value&rdquo; system, where engagement is directly converted into tangible rewards.
             </p>
           </section>
 
@@ -170,7 +170,7 @@ export default function Whitepaper() {
 
           {/* Footer */}
           <footer className="text-center text-white/60 pt-12">
-            <p>© 2025 Blublue. All rights reserved.</p>
+            <p> 2025 Blublue. All rights reserved.</p>
             <p className="text-sm mt-2">Version 1.0</p>
           </footer>
         </div>
