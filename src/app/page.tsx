@@ -12,6 +12,7 @@ import {
   FaHandshake,
   FaCheckCircle,
 } from "react-icons/fa";
+import { ConnectWallet } from "@/components/ConnectWallet";
 
 export default function Home() {
   return (
@@ -57,12 +58,7 @@ export default function Home() {
             has value. Connect, create, and earn in the Web3 ecosystem.
           </p>
           <div className="flex gap-4 justify-center mt-8">
-            <Link
-              href="/auth"
-              className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-all transform hover:scale-105"
-            >
-              Connect Wallet
-            </Link>
+            <ConnectWallet />
           </div>
         </div>
 

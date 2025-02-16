@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "@/components/Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BluBLUE - Socializing Meets Earning",
-  description: "The future of finance, where social connections drive economic opportunities",
+  title: "Blublue - Social Finance Reimagined",
+  description: "Experience the future of social networking where every interaction has value",
   keywords: ["social finance", "crypto", "blockchain", "earning", "networking"],
   openGraph: {
     title: "BluBLUE - Socializing Meets Earning",
@@ -59,7 +60,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
