@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BluBlue Frontend
+
+BluBlue is a decentralized social media platform that rewards user engagement through NFTs and tokens.
+
+> 🏆 This project is part of the **Indonesia Hacker House Hackathon 2025**, organized by [Blockdev.id](https://blockdev.id) and [Manta Network](https://manta.network).
+
+## Related Repositories
+
+- 📝 [Smart Contracts](https://github.com/emhaihsan/blublue-contract) - BluBlue's smart contract implementation
+
+## Team Members
+
+- **Pitchdeck & Documentation**:
+
+  - Mr Punk (Duniaweb3)
+  - Bayy
+  - Eliska
+
+- **Flowchart**:
+
+  - Andika
+
+- **Smart Contract**:
+
+  - Ihsan
+
+- **Backend**:
+
+  - Saddam Machmud
+
+- **Frontend & Wireframe**:
+  - Bayy
+
+## Features
+
+- Wallet Connection using RainbowKit
+- Social Media Feed
+- Post Creation with Image Upload
+- NFT Minting for Posts
+- Token Rewards for Engagement
+- User Profile Management
+
+## Tech Stack
+
+- Next.js 13 (App Router)
+- TypeScript
+- TailwindCSS
+- RainbowKit & Wagmi
+- IPFS (for image storage)
+- Ethers.js
 
 ## Getting Started
 
-First, run the development server:
+1. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+2. Set up environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Next.js app router pages
+├── components/            # Reusable React components
+├── hooks/                # Custom React hooks
+├── styles/               # Global styles and Tailwind config
+└── utils/               # Helper functions and utilities
+```
 
-## Learn More
+## Development Roadmap
 
-To learn more about Next.js, take a look at the following resources:
+### Phase 1: Core Infrastructure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Project setup and configuration
+- Smart contract integration
+- Wallet connection
+- Basic routing and layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Phase 2: Social Features
 
-## Deploy on Vercel
+- Post creation and feed
+- Image upload to IPFS
+- Like functionality
+- User profiles
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Phase 3: Token Economy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- NFT minting for posts
+- Token rewards for engagement
+- Token balance display
+- Transaction history
+
+### Phase 4: Enhanced Features
+
+- Comments and replies
+- Post sharing
+- Advanced profile customization
+- Search functionality
+
+### Phase 5: Platform Growth
+
+- Mobile optimization
+- Performance improvements
+- Community features
+- Analytics dashboard
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
