@@ -54,7 +54,7 @@ const mantaPacific: ChainConfig = {
 
 const mantaPacificTestnet: ChainConfig = {
   id: 3441006,
-  name: 'Manta Pacific Sepolia Testnet',
+  name: 'Manta Pacific Testnet',
   network: 'manta-pacific-testnet',
   nativeCurrency: {
     decimals: 18,
@@ -63,27 +63,24 @@ const mantaPacificTestnet: ChainConfig = {
   },
   rpcUrls: {
     default: {
-      http: ['https://pacific-rpc.sepolia-testnet.manta.network/http'],
+      http: [process.env.NEXT_PUBLIC_MANTA_PACIFIC_RPC!],
     },
     public: {
-      http: ['https://pacific-rpc.sepolia-testnet.manta.network/http'],
+      http: [process.env.NEXT_PUBLIC_MANTA_PACIFIC_RPC!],
     },
   },
   blockExplorers: {
     default: {
-      name: 'Manta Pacific Sepolia Testnet Explorer',
-      url: 'https://pacific-explorer.sepolia-testnet.manta.network',
+      name: 'Manta Pacific Explorer',
+      url: 'https://pacific-explorer.manta.network/',
     },
   },
   testnet: true,
 };
 
 export const config = getDefaultConfig({
-  appName: 'Blublue',
-  projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || '',
-  chains: [
-    mantaPacific,
-    mantaPacificTestnet
-  ],
+  appName: 'BluBlue',
+  projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID!,
+  chains: [mantaPacificTestnet, mantaPacific],
   ssr: true,
 });
